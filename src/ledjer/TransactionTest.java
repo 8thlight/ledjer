@@ -12,6 +12,7 @@ import java.util.LinkedList;
 import org.junit.Test;
 
 public class TransactionTest {
+	private static final String DATE_FORMAT = "yyyy/MM/dd";
 	private Calendar cal = new GregorianCalendar();
 	private Date today = cal.getTime();
 	
@@ -58,7 +59,7 @@ public class TransactionTest {
 	@Test
 	public void assignsTodaysDate() {
 		Transaction transaction = new TestTransaction(1000, today);
-		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+		SimpleDateFormat format = new SimpleDateFormat(DATE_FORMAT);
 		assertEquals(format.format(today), format.format(transaction.getDate()));
 	}
 	

@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Deposit extends Transaction {
+	private static final String DATE_FORMAT = "MMM d, yyyy";
 	private static final long serialVersionUID = 1L;
 
 	public Deposit(int amount, Date date) {
@@ -12,7 +13,7 @@ public class Deposit extends Transaction {
 	
 	@Override
 	public String asStatement() {
-		SimpleDateFormat format = new SimpleDateFormat("MMM d, yyyy");
+		SimpleDateFormat format = new SimpleDateFormat(DATE_FORMAT);
 		return format.format(getDate()) + " " + getNumber() + ". Deposit: " + formattedAmount(getAmount()) + newLine();
 	}
 	

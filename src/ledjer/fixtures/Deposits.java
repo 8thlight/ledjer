@@ -8,6 +8,7 @@ import ledjer.Deposit;
 import ledjer.Transaction;
 
 public class Deposits {
+	private static final String DATE_FORMAT = "MMM d, yyyy";
 	private Transaction deposit;
 	private int amount;
 	private String dateString;
@@ -31,7 +32,7 @@ public class Deposits {
 	}
 	
 	public void execute() throws ParseException {
-		Date date = new SimpleDateFormat("MMM d, yyyy").parse(dateString);
+		Date date = new SimpleDateFormat(DATE_FORMAT).parse(dateString);
 		deposit = new Deposit(amount, date);
 		Context.ledger.deposit(deposit);
 	}

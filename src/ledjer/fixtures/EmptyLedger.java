@@ -12,6 +12,7 @@ import ledjer.Payment;
 import ledjer.Transaction;
 
 public class EmptyLedger {
+	private static final String DATE_FORMAT = "MMM d, yyyy";
 	private Class<? extends Exception> exceptionType;
 	private Calendar cal = new GregorianCalendar();
 	private Date today = cal.getTime();
@@ -45,13 +46,13 @@ public class EmptyLedger {
 	}
 	
 	public boolean depositCentsOn(int amount, String depositDate) throws ParseException {
-		Date date = new SimpleDateFormat("MMM d, yyyy").parse(depositDate);
+		Date date = new SimpleDateFormat(DATE_FORMAT).parse(depositDate);
 		Context.ledger.deposit(new Deposit(amount, date));
 		return true;
 	}
 	
 	public boolean payCentsToOn(int amount, String payee, String paymentDate) throws ParseException {
-		Date date = new SimpleDateFormat("MMM d, yyyy").parse(paymentDate);
+		Date date = new SimpleDateFormat(DATE_FORMAT).parse(paymentDate);
 		Context.ledger.pay(new Payment(amount, date, payee));
 		return true;
 	}
