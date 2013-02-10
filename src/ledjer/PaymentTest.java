@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 import org.junit.Before;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -12,7 +14,8 @@ import java.util.GregorianCalendar;
 public class PaymentTest {
 	private Calendar cal = new GregorianCalendar();
 	private Date today = cal.getTime();
-	
+	private SimpleDateFormat format = new SimpleDateFormat("MMM d, yyyy");
+
 	@Before
 	public void setup() {
 		Transaction.resetNextNumber();
@@ -32,17 +35,16 @@ public class PaymentTest {
 	
 	@Test
 	public void createsStatement() {
-		SimpleDateFormat format = new SimpleDateFormat("MMM d, yyyy");
 		Transaction.resetNextNumber();
 		Payment payment = new Payment(200, today, "amazon.com");
 		assertEquals(format.format(today) + " 1. Payment to amazon.com: ($2.00)" + Transaction.newLine(), payment.asStatement());
 	}
 	
 	@Test
-	public void paymentsWithSameAmountAndPayeeAreEqual() {
+	public void paymentsWithDifferentNumberAreNotEqual() {
 		Payment payment = new Payment(200, today, "amazon.com");
 		Payment paymentTwo = new Payment(200, today, "amazon.com");
-		assertEquals(payment, paymentTwo);
+		assertFalse(payment.equals(paymentTwo));
 	}
 	
 	@Test
@@ -60,6 +62,16 @@ public class PaymentTest {
 	}
 	
 	@Test
+	public void paymentsWithDifferentDatesAreNotEqual() throws ParseException {
+		Date otherDate = format.parse("Jan 1, 2001");
+		Transaction.resetNextNumber();
+		Payment payment = new Payment(200, today, "amazon.com");
+		Transaction.resetNextNumber();
+		Payment paymentTwo = new Payment(200, otherDate, "amazon.com");
+		assertFalse(payment.equals(paymentTwo));
+	}
+	
+	@Test
 	public void notEqualIfNotInstanceOfPayment() {
 		Payment payment = new Payment(200, today, "amazon.com");
 		Object object = new Object();
@@ -70,6 +82,6 @@ public class PaymentTest {
 	public void clonedPaymentsAreEqual() {
 		Payment payment = new Payment(200, today, "amazon.com");
 		Payment clone = payment.clone();
-		assertEquals(payment, clone);
+		assertTrue(payment.equals(clone));
 	}
 }

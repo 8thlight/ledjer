@@ -27,7 +27,11 @@ public class Payment extends Transaction {
 	public boolean equals(Object object) {
 		if (!(object instanceof Payment))
 			return false;
-		return (this.getAmount() == ((Payment) object).getAmount() && this.getPayee() == ((Payment) object).getPayee());
+		Payment other = (Payment) object;
+		return (this.getAmount() == other.getAmount() && 
+				this.getNumber() == other.getNumber() &&
+				this.getPayee() == other.getPayee() &&
+				this.getDate().equals(other.getDate()));
 	}
 	
 	@Override
