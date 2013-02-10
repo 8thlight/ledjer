@@ -2,6 +2,7 @@ package ledjer;
 
 import static org.junit.Assert.assertEquals;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Collections;
@@ -12,10 +13,10 @@ import java.util.LinkedList;
 import org.junit.Test;
 
 public class TransactionTest {
-	private static final String DATE_FORMAT = "yyyy/MM/dd";
 	private Calendar cal = new GregorianCalendar();
 	private Date today = cal.getTime();
-	
+	private SimpleDateFormat format = new SimpleDateFormat("MMM d, yyyy");
+
 	private class TestTransaction extends Transaction {
 
 		private static final long serialVersionUID = 1L;
@@ -59,15 +60,18 @@ public class TransactionTest {
 	@Test
 	public void assignsTodaysDate() {
 		Transaction transaction = new TestTransaction(1000, today);
-		SimpleDateFormat format = new SimpleDateFormat(DATE_FORMAT);
 		assertEquals(format.format(today), format.format(transaction.getDate()));
 	}
 	
 	@Test
-	public void sortsTransactionsByDate() {
-		Transaction t1 = new TestTransaction(10, today);
-		Transaction t2 = new TestTransaction(10, today);
-		Transaction t3 = new TestTransaction(10, today);
+	public void sortsTransactionsByDate() throws ParseException {
+		Date dateOne = format.parse("Jan 1, 2013");
+		Date dateTwo = format.parse("Jan 2, 2013");
+		Date dateThree = format.parse("Jan 3, 2013");
+		
+		Transaction t1 = new TestTransaction(10, dateOne);
+		Transaction t2 = new TestTransaction(10, dateTwo);
+		Transaction t3 = new TestTransaction(10, dateThree);
 		LinkedList<Transaction> transactions = new LinkedList<Transaction>();
 		transactions.add(t3);
 		transactions.add(t2);
