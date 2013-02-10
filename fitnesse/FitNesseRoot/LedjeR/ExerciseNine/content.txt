@@ -4,3 +4,31 @@ chronological
 payment number
 
 Add dates to all deposits and payments, autogenerate payment numbers
+
+
+|script|empty ledger|
+
+|script|reset transaction count|
+
+!|Deposits|
+|amount|date|
+|100|Jan 31, 2013|
+|100|Jan 30, 2013|
+
+!|Payments|
+|amount|date|payee|
+|100|Jan 29, 2013|amazon.com|
+|100|Jan 28, 2013|amazon.com|
+
+!|Deposits|
+|amount|date|
+|100|Jan 27, 2013|
+
+|Query:Statement|
+|lineitem|
+|Jan 27, 2013 5. Deposit: $1.00|
+|Jan 28, 2013 4. Payment to amazon.com: ($1.00)|
+|Jan 29, 2013 3. Payment to amazon.com: ($1.00)|
+|Jan 30, 2013 2. Deposit: $1.00|
+|Jan 31, 2013 1. Deposit: $1.00|
+|Total: $1.00|

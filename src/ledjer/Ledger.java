@@ -1,6 +1,11 @@
 package ledjer;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -31,6 +36,7 @@ public class Ledger implements Cloneable, Serializable {
 
 	public String statement() {
 		String statement = "";
+		Collections.sort(transactions);
 		for (Transaction transaction : transactions) {
 			statement += transaction.asStatement();
 		}

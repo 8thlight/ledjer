@@ -3,6 +3,7 @@ package ledjer;
 import static org.junit.Assert.*;
 import java.io.File;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -16,7 +17,7 @@ public class LedgerTest {
 	private Ledger ledger;
 	private Calendar cal;
 	private Date today;
-	private SimpleDateFormat format;
+	private SimpleDateFormat format = new SimpleDateFormat("MMM d, yyyy");
 	
 	@Before
 	public void setup() {
@@ -24,11 +25,6 @@ public class LedgerTest {
 		Transaction.resetNextNumber();
 		cal = new GregorianCalendar();
 		today = cal.getTime();
-		format = new SimpleDateFormat("MMM d, yyyy");
-	}
-	
-	private String todaysDate() {
-		return format.format(today);
 	}
 	
 	@Test
@@ -52,14 +48,18 @@ public class LedgerTest {
 	}
 	
 	@Test
-	public void statementIncludesPaymentsAndDepositsHistory() {
-		ledger.deposit(new Deposit(1000, today));
-		ledger.pay(new Payment(500, today,"foo"));
-		ledger.pay(new Payment(100, today, "bar"));
+	public void statementIncludesSortedPaymentsAndDepositsHistory() throws ParseException {
+		Date dateOne = format.parse("Jan 1, 2013");
+		Date dateTwo = format.parse("Jan 2, 2013");
+		Date dateThree = format.parse("Jan 3, 2013");
+		
+		ledger.deposit(new Deposit(1000, dateThree));
+		ledger.pay(new Payment(500, dateTwo,"foo"));
+		ledger.pay(new Payment(100, dateOne, "bar"));
 
-		String expectedStatement = todaysDate() + " 1. Deposit: $10.00" + Transaction.newLine() + 
-								   todaysDate() + " 2. Payment to foo: ($5.00)" + Transaction.newLine() +
-								   todaysDate() + " 3. Payment to bar: ($1.00)" + Transaction.newLine() +
+		String expectedStatement = "Jan 1, 2013 3. Payment to bar: ($1.00)" + Transaction.newLine() + 
+								   "Jan 2, 2013 2. Payment to foo: ($5.00)" + Transaction.newLine() +
+								   "Jan 3, 2013 1. Deposit: $10.00" + Transaction.newLine() + 
 								   "Total: $4.00";
 		assertEquals(expectedStatement, ledger.statement());
 	}
@@ -139,9 +139,11 @@ public class LedgerTest {
   }
 
   @Test
-  public void loads() {
-	  ledger.deposit(new Deposit(1000, today));
-	  ledger.pay(new Payment(500, today, "Joe"));
+  public void loads() throws ParseException {
+	  Date dateOne = format.parse("Jan 1, 2013");
+	  Date dateTwo = format.parse("Jan 2, 2013");
+	  ledger.deposit(new Deposit(1000, dateOne));
+	  ledger.pay(new Payment(500, dateTwo, "Joe"));
 	  String statement = ledger.statement();
 	  String ledgerString = ledger.toString();
 	  ledger.save();
