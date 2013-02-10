@@ -2,7 +2,9 @@ package ledjer;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -15,7 +17,7 @@ import org.junit.Test;
 public class DepositTest {
 	private Calendar cal = new GregorianCalendar();
 	private Date today = cal.getTime();
-
+	private SimpleDateFormat format = new SimpleDateFormat("MMM d, yyyy");
 
 	@Before
 	public void setup() {
@@ -30,7 +32,6 @@ public class DepositTest {
 	@Test
 	public void createsStatement() {
 		Transaction.resetNextNumber();
-		SimpleDateFormat format = new SimpleDateFormat("MMM d, yyyy");
 		Deposit deposit = new Deposit(2000, today);
 		assertEquals(format.format(today) + " 1. Deposit: $20.00" + Transaction.newLine(), deposit.asStatement());
 	}
@@ -44,11 +45,22 @@ public class DepositTest {
 	}
 	
 	@Test
-	public void depositsWithEqualAmountsAreEqual() {
+	public void depositsWithDifferentNumbersAreNotEqual() {
 		Deposit deposit = new Deposit(3000, today);
 		Deposit depositTwo = new Deposit(3000, today);
 		
-		assertEquals(deposit, depositTwo);
+		assertFalse(deposit.equals(depositTwo));
+	}
+	
+	@Test
+	public void depositsWithDifferentDatesAreNotEqual() throws ParseException {
+		Date otherDate = format.parse("Jan 1, 2001");
+		Transaction.resetNextNumber();
+		Deposit deposit = new Deposit(3000, today);
+		Transaction.resetNextNumber();
+		Deposit depositTwo = new Deposit(3000, otherDate);
+		
+		assertFalse(deposit.equals(depositTwo));
 	}
 	
 	@Test
@@ -71,6 +83,6 @@ public class DepositTest {
 		Deposit deposit = new Deposit(3000, today);
 		Deposit clone = deposit.clone();
 		
-		assertEquals(deposit, clone);
+		assertTrue(deposit.equals(clone));
 	}
 }

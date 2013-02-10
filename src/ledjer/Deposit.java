@@ -26,6 +26,9 @@ public class Deposit extends Transaction {
 	public boolean equals(Object object) {
 		if (!(object instanceof Deposit))
 			return false;
-		return (this.getAmount() == ((Deposit) object).getAmount());
+		Deposit other = (Deposit) object;
+		return (this.getAmount() == other.getAmount() &&
+				this.getNumber() == other.getNumber() &&
+				this.getDate().equals(other.getDate()));
 	}
 }
