@@ -5,14 +5,14 @@ The ledger can accept deposits. Deposits increase the balance of the ledger.
 |script|empty ledger|
 
 !|Deposits|
-|amount|balance?|
-|100|100|
-|200|300|
+|amount|date|balance?|
+|100|Jan 1, 2013|100|
+|200|Jan 1, 2013|300|
 
 A statement for a ledger displays each deposit on a separate line. The total is shown on the last line of the statement.
 
 |Query:Statement|
 |lineitem|
-|1. Deposit: $1.00|
-|2. Deposit: $2.00|
+|Jan 1, 2013 1. Deposit: $1.00|
+|Jan 1, 2013 2. Deposit: $2.00|
 |Total: $3.00|

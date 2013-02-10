@@ -1,9 +1,7 @@
 package ledjer;
 
 import java.io.Serializable;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 public abstract class Transaction implements Cloneable, Serializable, Comparable<Transaction> {
 
@@ -13,12 +11,11 @@ public abstract class Transaction implements Cloneable, Serializable, Comparable
 	private int amount;
 	private Date date;
 	private static int nextNumber = STARTING_NUMBER;
-	private static Calendar calendar = new GregorianCalendar();
 	
-	public Transaction(int amount) {
+	public Transaction(int amount, Date date) {
 		this.amount = amount;
 		this.number = nextNumber++;
-		this.date = calendar.getTime();
+		this.date = date;
 	}
 	
 	public int getAmount() {

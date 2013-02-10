@@ -17,8 +17,8 @@ Now load the ledger and make sure it only has the first two transactions.
 
 |Query:Statement|
 |lineitem|
-|1. Deposit: $10.00|
-|2. Payment to Apple: ($5.00)|
+|Jan 4, 2013 1. Deposit: $10.00|
+|Feb 5, 2013 2. Payment to Apple: ($5.00)|
 |Total: $5.00|
 
 

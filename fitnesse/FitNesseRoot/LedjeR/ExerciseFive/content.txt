@@ -3,8 +3,8 @@
 |script|empty ledger|
 
 !|Deposits|
-|amount|
-|1000|
+|amount|date|
+|1000|Jan 1, 2013|
 
 |script|
 |make payment|1001|and catch exception|

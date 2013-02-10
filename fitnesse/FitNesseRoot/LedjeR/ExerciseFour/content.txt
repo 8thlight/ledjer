@@ -8,28 +8,28 @@ Maybe have a test that adds: deposit, payment, deposit. Ensure the statement sho
 |script|empty ledger|
 
 !|Deposits|
-|amount|
-|1000|
+|amount|date|
+|1000|Jan 1, 2013|
 
 !|Payments|
-|amount|payee|
-|100|Apple|
+|amount|date|payee|
+|100|Jan 1, 2013|Apple|
 
 !|Deposits|
-|amount|
-|200|
+|amount|date|
+|200|Jan 1, 2013|
 
 !|Payments|
-|amount|payee|
-|300|Amazon|
+|amount|date|payee|
+|300|Jan 1, 2013|Amazon|
 
 
 A statement for a ledger displays each deposit on a separate line. The total is shown on the last line of the statement.
 
 |Query:Statement|
 |lineitem|
-|1. Deposit: $10.00|
-|2. Payment to Apple: ($1.00)|
-|3. Deposit: $2.00|
-|4. Payment to Amazon: ($3.00)|
+|Jan 1, 2013 1. Deposit: $10.00|
+|Jan 1, 2013 2. Payment to Apple: ($1.00)|
+|Jan 1, 2013 3. Deposit: $2.00|
+|Jan 1, 2013 4. Payment to Amazon: ($3.00)|
 |Total: $8.00|

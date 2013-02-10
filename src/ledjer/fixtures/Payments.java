@@ -1,10 +1,15 @@
 package ledjer.fixtures;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import ledjer.Payment;
 
 public class Payments {
 	private int amount;
 	private String payee;
+	private String dateString;
 	private Payment payment;
 	
 	public Payments() {
@@ -18,6 +23,10 @@ public class Payments {
 		this.payee = payee;
 	}
 	
+	public void setDate(String date) {
+		this.dateString = date;
+	}
+	
 	public int balance() {
 		return Context.ledger.getBalance();
 	}
@@ -26,8 +35,9 @@ public class Payments {
 		return payment.getNumber();
 	}
 	
-	public void execute() {
-		payment = new Payment(amount, payee);
+	public void execute() throws ParseException {
+		Date date = new SimpleDateFormat("MMM d, yyyy").parse(dateString);
+		payment = new Payment(amount, date, payee);
 		Context.ledger.pay(payment);
 	}
 }

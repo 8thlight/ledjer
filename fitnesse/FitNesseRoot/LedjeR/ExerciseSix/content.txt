@@ -7,27 +7,27 @@ nextNumber is static.
 |script|reset transaction count|
 
 !|Deposits|
-|amount|number?|
-|100|1|
-|100|2|
+|amount|date|number?|
+|100|Jan 1, 2013|1|
+|100|Jan 1, 2013|2|
 
 !|Payments|
-|amount|payee|number?|
-|100|amazon.com|3|
-|100|amazon.com|4|
+|amount|date|payee|number?|
+|100|Jan 1, 2013|amazon.com|3|
+|100|Jan 1, 2013|amazon.com|4|
 
 !|Deposits|
-|amount|number?|
-|100|5|
+|amount|date|number?|
+|100|Jan 1, 2013|5|
 
 
 A statement for a ledger displays each payment and deposit on a separate line. The total is shown on the last line of the statement.
 
 |Query:Statement|
 |lineitem|
-|1. Deposit: $1.00|
-|2. Deposit: $1.00|
-|3. Payment to amazon.com: ($1.00)|
-|4. Payment to amazon.com: ($1.00)|
-|5. Deposit: $1.00|
+|Jan 1, 2013 1. Deposit: $1.00|
+|Jan 1, 2013 2. Deposit: $1.00|
+|Jan 1, 2013 3. Payment to amazon.com: ($1.00)|
+|Jan 1, 2013 4. Payment to amazon.com: ($1.00)|
+|Jan 1, 2013 5. Deposit: $1.00|
 |Total: $1.00|

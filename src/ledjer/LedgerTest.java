@@ -24,7 +24,7 @@ public class LedgerTest {
 		Transaction.resetNextNumber();
 		cal = new GregorianCalendar();
 		today = cal.getTime();
-		format = new SimpleDateFormat("yyyy/MM/dd");
+		format = new SimpleDateFormat("MMM d, yyyy");
 	}
 	
 	private String todaysDate() {
@@ -38,14 +38,14 @@ public class LedgerTest {
 	
 	@Test
 	public void depositAddsToBalance() {
-		ledger.deposit(new Deposit(100));
+		ledger.deposit(new Deposit(100, today));
 		assertEquals(100, ledger.getBalance());
 	}
 	
 	@Test
 	public void paymentSubtractsFromBalance() {
-		Transaction deposit = new Deposit(100);
-		Payment payment = new Payment(50, "foo");
+		Transaction deposit = new Deposit(100, today);
+		Payment payment = new Payment(50, today, "foo");
 		ledger.deposit(deposit);
 		ledger.pay(payment);
 		assertEquals(50, ledger.getBalance());
@@ -53,9 +53,9 @@ public class LedgerTest {
 	
 	@Test
 	public void statementIncludesPaymentsAndDepositsHistory() {
-		ledger.deposit(new Deposit(1000));
-		ledger.pay(new Payment(500, "foo"));
-		ledger.pay(new Payment(100, "bar"));
+		ledger.deposit(new Deposit(1000, today));
+		ledger.pay(new Payment(500, today,"foo"));
+		ledger.pay(new Payment(100, today, "bar"));
 
 		String expectedStatement = todaysDate() + " 1. Deposit: $10.00" + Transaction.newLine() + 
 								   todaysDate() + " 2. Payment to foo: ($5.00)" + Transaction.newLine() +
@@ -66,7 +66,7 @@ public class LedgerTest {
 	
 	@Test(expected = NegativeBalanceException.class)
 	public void doesNotAllowNegativeBalance() {
-		ledger.pay(new Payment(1, "payee"));
+		ledger.pay(new Payment(1, today, "payee"));
 	}
 	
     @Test
@@ -82,15 +82,15 @@ public class LedgerTest {
   @Test
   public void ledgersNotEqualIfNumberOfTransactionsDifferent() {
       Ledger ledgerTwo = new Ledger();
-      ledger.deposit(new Deposit(100));
+      ledger.deposit(new Deposit(100, today));
       assertFalse(ledger.equals(ledgerTwo));
   }
  
   @Test
   public void ledgersNotEqualIfTransactionsAreNotEqual() {
-	  Deposit deposit = new Deposit(200);
-      Payment paymentOne = new Payment(100, "foo");
-      Payment paymentTwo = new Payment(100, "bar");
+	  Deposit deposit = new Deposit(200, today);
+      Payment paymentOne = new Payment(100, today, "foo");
+      Payment paymentTwo = new Payment(100, today, "bar");
 	  Ledger ledgerTwo = new Ledger();
       ledger.deposit(deposit);
       ledgerTwo.deposit(deposit);
@@ -102,9 +102,9 @@ public class LedgerTest {
   
   @Test
   public void ledgersAreEqualIfTransactionHistoryIsEqual() {
-	  Deposit deposit = new Deposit(400);
-      Payment paymentOne = new Payment(100, "foo");
-      Payment paymentTwo = new Payment(100, "bar");
+	  Deposit deposit = new Deposit(400, today);
+      Payment paymentOne = new Payment(100, today, "foo");
+      Payment paymentTwo = new Payment(100, today, "bar");
 	  Ledger ledgerTwo = new Ledger();
       ledger.deposit(deposit);
       ledgerTwo.deposit(deposit);
@@ -118,9 +118,9 @@ public class LedgerTest {
   
   @Test
   public void transactionsAndBalanceClonedWhenCloningLedgers() throws CloneNotSupportedException {
-	  Deposit deposit = new Deposit(400);
-      Payment paymentOne = new Payment(100, "foo");
-      Payment paymentTwo = new Payment(100, "bar");
+	  Deposit deposit = new Deposit(400, today);
+      Payment paymentOne = new Payment(100, today, "foo");
+      Payment paymentTwo = new Payment(100, today, "bar");
       ledger.deposit(deposit);
       ledger.pay(paymentOne);
       ledger.pay(paymentTwo);
@@ -132,16 +132,16 @@ public class LedgerTest {
   
   @Test
   public void savesToFile() {
-	  ledger.deposit(new Deposit(1000));
-	  ledger.pay(new Payment(500, "Joe"));
+	  ledger.deposit(new Deposit(1000, today));
+	  ledger.pay(new Payment(500, today, "Joe"));
 	  ledger.save();
 	  assertTrue(new File("ledger.dump").exists());
   }
 
   @Test
   public void loads() {
-	  ledger.deposit(new Deposit(1000));
-	  ledger.pay(new Payment(500, "Joe"));
+	  ledger.deposit(new Deposit(1000, today));
+	  ledger.pay(new Payment(500, today, "Joe"));
 	  String statement = ledger.statement();
 	  String ledgerString = ledger.toString();
 	  ledger.save();

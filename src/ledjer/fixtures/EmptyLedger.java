@@ -1,5 +1,11 @@
 package ledjer.fixtures;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import ledjer.Deposit;
 import ledjer.Ledger;
 import ledjer.Payment;
@@ -7,6 +13,8 @@ import ledjer.Transaction;
 
 public class EmptyLedger {
 	private Class<? extends Exception> exceptionType;
+	private Calendar cal = new GregorianCalendar();
+	private Date today = cal.getTime();
 
 	public EmptyLedger() {
 		Transaction.resetNextNumber();
@@ -19,7 +27,7 @@ public class EmptyLedger {
 	
 	public void depositThisManyTimes(int depositAmount, int numberOfDeposits) {
 		for (int i=0; i < numberOfDeposits; i++) {
-			Context.ledger.deposit(new Deposit(depositAmount));
+			Context.ledger.deposit(new Deposit(depositAmount, today));
 		}
 	}
 	
@@ -29,20 +37,22 @@ public class EmptyLedger {
 	
 	public void makePaymentAndCatchException(int paymentAmount) {
 		try {
-			Context.ledger.pay(new Payment(paymentAmount, "Anyone"));
+			Context.ledger.pay(new Payment(paymentAmount, today, "Anyone"));
 		}
 		catch (Exception e) {
 			exceptionType = e.getClass();
 		}
 	}
 	
-	public boolean depositCentsOn(int amount, String depositDate) {
-		Context.ledger.deposit(new Deposit(amount));
+	public boolean depositCentsOn(int amount, String depositDate) throws ParseException {
+		Date date = new SimpleDateFormat("MMM d, yyyy").parse(depositDate);
+		Context.ledger.deposit(new Deposit(amount, date));
 		return true;
 	}
 	
-	public boolean payCentsToOn(int amount, String payee, String date) {
-		Context.ledger.pay(new Payment(amount, payee));
+	public boolean payCentsToOn(int amount, String payee, String paymentDate) throws ParseException {
+		Date date = new SimpleDateFormat("MMM d, yyyy").parse(paymentDate);
+		Context.ledger.pay(new Payment(amount, date, payee));
 		return true;
 	}
 	

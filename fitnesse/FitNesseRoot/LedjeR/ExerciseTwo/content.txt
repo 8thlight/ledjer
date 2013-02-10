@@ -5,21 +5,21 @@ The ledger can accept payments. Payments decrease the balance of the ledger.
 |script|empty ledger|
 
 !|Deposits|
-|amount|
-|10000|
+|amount|date|
+|10000|Jan 1, 2013|
 
 !|Payments|
-|amount|payee|balance?|
-|100|Apple|9900|
-|200|Amazon|9700|
-|300|BBC|9400|
+|amount|date|payee|balance?|
+|100|Jan 1, 2013|Apple|9900|
+|200|Jan 1, 2013|Amazon|9700|
+|300|Jan 1, 2013|BBC|9400|
 
 A statement for a ledger displays each payment and deposit on a separate line. The total is shown on the last line of the statement.
 
 |Query:Statement|
 |lineitem|
-|1. Deposit: $100.00|
-|2. Payment to Apple: ($1.00)|
-|3. Payment to Amazon: ($2.00)|
-|4. Payment to BBC: ($3.00)|
+|Jan 1, 2013 1. Deposit: $100.00|
+|Jan 1, 2013 2. Payment to Apple: ($1.00)|
+|Jan 1, 2013 3. Payment to Amazon: ($2.00)|
+|Jan 1, 2013 4. Payment to BBC: ($3.00)|
 |Total: $94.00|

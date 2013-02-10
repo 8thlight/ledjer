@@ -1,13 +1,14 @@
 package ledjer;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Payment extends Transaction {
 	private static final long serialVersionUID = 1L;
 	private String payee;
 	
-	public Payment(int amount, String payee) {
-		super(amount);
+	public Payment(int amount, Date date, String payee) {
+		super(amount, date);
 		this.payee = payee;
 	}
 	
@@ -17,7 +18,7 @@ public class Payment extends Transaction {
 	
 	@Override
 	public String asStatement() {
-		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+		SimpleDateFormat format = new SimpleDateFormat("MMM d, yyyy");
 		return format.format(getDate()) + " " + getNumber() + ". Payment to " + getPayee() + ": (" + formattedAmount(getAmount()) +")" + Transaction.newLine();
 	}
 	
