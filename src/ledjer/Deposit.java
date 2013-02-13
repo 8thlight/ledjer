@@ -7,6 +7,11 @@ public class Deposit extends Transaction {
 	private static final String DATE_FORMAT = "MMM d, yyyy";
 	private static final long serialVersionUID = 1L;
 
+  public Deposit()
+  {
+    super();
+  }
+
 	public Deposit(int amount, Date date) {
 		super(amount, date);
 	}
