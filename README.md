@@ -4,12 +4,9 @@ ledjer
 Ledjer - exercises for Java training course
 
 == Opening in Eclipse
-Install EGit plugin
-
-DOESN'T WORK...
-* create a new workspace
-* create a new Project
-* File->Import..., General->Existing Projects into Workspace
+Create a workspace.
+Clone the github repository
+Copy the cloned repository into the directory that your workspace points to (include hidden files / directories, if possible, i.e., .git)
 
 == Adding Junit
 * if after opening the project for the first time in eclipse, you may be missing the JUnit dependency
