@@ -129,29 +129,23 @@ public class LedgerTest {
       assertEquals(ledger, ledger.clone());
       assertNotSame(ledger, ledger.clone());
   }
-  
+
   @Test
-  public void savesToFile() {
-	  ledger.deposit(new Deposit(1000, today));
-	  ledger.pay(new Payment(500, today, "Joe"));
-	  ledger.save();
-	  assertTrue(new File("ledger.dump").exists());
+  public void saving() throws Exception
+  {
+    final MemoryPersister memoryPersister = new MemoryPersister();
+    Ledger.setPersister(memoryPersister);
+    ledger.save();
+    assertSame(ledger, memoryPersister.savedObject);
   }
 
   @Test
-  public void loads() throws ParseException {
-	  Date dateOne = format.parse("Jan 1, 2013");
-	  Date dateTwo = format.parse("Jan 2, 2013");
-	  ledger.deposit(new Deposit(1000, dateOne));
-	  ledger.pay(new Payment(500, dateTwo, "Joe"));
-	  String statement = ledger.statement();
-	  String ledgerString = ledger.toString();
-	  ledger.save();
-	  ledger = null;
-	  System.gc();
-	  
-	  ledger = Ledger.load();
-	  assertEquals(statement, ledger.statement());
-	  assertFalse(ledgerString.equals(ledger.toString()));
+  public void loads() throws Exception
+  {
+    final MemoryPersister memoryPersister = new MemoryPersister();
+    Ledger.setPersister(memoryPersister);
+    memoryPersister.savedObject = ledger;
+
+    assertSame(ledger, Ledger.load());
   }
 }

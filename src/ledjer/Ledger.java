@@ -10,11 +10,12 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Ledger implements Cloneable, Serializable {
-	private static final long serialVersionUID = 1L;
-	private int balance;
-	private List<Transaction> transactions;
-	
-	public Ledger() {
+  private static Persister persister = new FilePersister("ledger.dump");
+  private static final long serialVersionUID = 1L;
+  private int balance;
+  private List<Transaction> transactions;
+
+  public Ledger() {
 		balance = 0;
 		transactions = new LinkedList<Transaction>();
 	}
@@ -85,28 +86,23 @@ public class Ledger implements Cloneable, Serializable {
 		return "Total: " + Transaction.formattedAmount(getBalance());
 	}
 
-	public void save() {
-		try {
-			ObjectOutputStream output = 
-					new ObjectOutputStream(
-							new FileOutputStream("ledger.dump"));
-			output.writeObject(this);
-			output.close();
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		} 
-	}
-	
-	public static Ledger load() {
-		try {
-			ObjectInputStream input = 
-					new ObjectInputStream(
-					new FileInputStream("ledger.dump"));
-			Ledger result = (Ledger) input.readObject();
-			input.close();
-			return result;
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
+  public static void setPersister(Persister p)
+  {
+    persister = p;
+  }
+
+  public static Persister getPersister()
+  {
+    return persister;
+  }
+
+  public void save()
+  {
+    persister.save(this);
+  }
+
+  public static Ledger load()
+  {
+    return (Ledger)persister.load();
+  }
 }
