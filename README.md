@@ -5,7 +5,7 @@ Ledjer - exercises for Java training course
 
 ## Opening in Eclipse
 * Create a workspace.
-* Clone the Github repository
+* Clone the GitHub repository
 * Copy the cloned repository into the directory that your workspace points to (include hidden files / directories, if possible, i.e., .git)
 
 ## Adding JUnit
@@ -17,7 +17,7 @@ Ledjer - exercises for Java training course
 
 
 ## Opening in IntelliJ
-* Clone the Github repository
+* Clone the GitHub repository
 * Open IntelliJ and navigate to File > New Project
 * In project location, choose the location where the cloned repo is located
 
@@ -36,8 +36,3 @@ Ledjer - exercises for Java training course
 ## Running Your Tests using Maven
 * If you already have maven, then just run `$ mvn test` in the ledjer directory
 * If not, `$ brew install maven`, or check out the [maven website](http://maven.apache.org/what-is-maven.html)
-
-
-
-
-
