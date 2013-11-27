@@ -1,7 +1,7 @@
 package ledjer;
 
 public class Ledger {
-	
+
 	private int balance;
 	
 	public Ledger() {
@@ -19,4 +19,9 @@ public class Ledger {
 	public String statement() {
 		return "Your balance is " + balance;
 	}
+
+    public void payment(Payment payment) {
+        balance -= payment.getAmount();
+    }
+
 }
