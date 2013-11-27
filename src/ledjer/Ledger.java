@@ -3,7 +3,7 @@ package ledjer;
 public class Ledger {
 
 	private int balance;
-	
+
 	public Ledger() {
 		balance = 0;
 	}

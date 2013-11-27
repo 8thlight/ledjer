@@ -1,0 +1,2039 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20121220</FitNesseVersion>
+  <rootPath>ShouldNotBeAbleToIncludeParentPage</rootPath>
+    <result>
+    <counts>
+      <right>2</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>105</runTimeInMillis>
+    <content><![CDATA[<div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand All</a></li><li><a href='#' class='collapseall'>Collapse All</a></li></ul>
+	<p class="title">Precompiled Libraries</p>
+	<div><br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand All</a></li><li><a href='#' class='collapseall'>Collapse All</a></li></ul>
+	<p class="title">Included page: <a href="FitNesse.SuiteAcceptanceTests.ScenarioLibrary">.FitNesse.SuiteAcceptanceTests.ScenarioLibrary</a> <a href="FitNesse.SuiteAcceptanceTests.ScenarioLibrary?edit&amp;redirectToReferer=true&amp;redirectAction=" class="edit">(edit)</a></p>
+	<div><table _TABLENUMBER=7393172384010535367>
+	<tr>
+		<td>scenario</td>
+		<td>given page</td>
+		<td>page</td>
+		<td>with content</td>
+		<td>content</td>
+	</tr>
+	<tr>
+		<td>create page</td>
+		<td>@page</td>
+		<td>with content</td>
+		<td colspan="2">@content</td>
+	</tr>
+	<tr>
+		<td>$IT=</td>
+		<td>echo</td>
+		<td colspan="3">@page</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=8433081015506228178>
+	<tr>
+		<td>scenario</td>
+		<td>given page</td>
+		<td colspan="2">page</td>
+	</tr>
+	<tr>
+		<td>given page</td>
+		<td>@page</td>
+		<td>with content</td>
+		<td>nothing</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=7636007617900229448>
+	<tr>
+		<td>scenario</td>
+		<td>given test page</td>
+		<td>page</td>
+	</tr>
+	<tr>
+		<td>given page</td>
+		<td colspan="2">@page</td>
+	</tr>
+	<tr>
+		<td>make</td>
+		<td>@page</td>
+		<td>a test page</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=1449356744935660056>
+	<tr>
+		<td>scenario</td>
+		<td>given slim test page</td>
+		<td colspan="2">page</td>
+	</tr>
+	<tr>
+		<td>given page</td>
+		<td>@page</td>
+		<td>with content</td>
+		<td>!define TEST_SYSTEM {slim}</td>
+	</tr>
+	<tr>
+		<td>make</td>
+		<td>@page</td>
+		<td colspan="2">a test page</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=3040386495037677064>
+	<tr>
+		<td>scenario</td>
+		<td>page</td>
+		<td>source</td>
+		<td>should have link to</td>
+		<td>target</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>request page</td>
+		<td>@source</td>
+		<td colspan="2">200</td>
+	</tr>
+	<tr>
+		<td>ensure</td>
+		<td>content contains</td>
+		<td colspan="3">&lt;a href="@target"&gt;</td>
+	</tr>
+	<tr>
+		<td>$IT=</td>
+		<td>echo</td>
+		<td colspan="3">@source</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=6444903088028044684>
+	<tr>
+		<td>scenario</td>
+		<td>it should have link to</td>
+		<td colspan="2">target</td>
+	</tr>
+	<tr>
+		<td>page</td>
+		<td>$IT</td>
+		<td>should have link to</td>
+		<td>@target</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=9217563734942461641>
+	<tr>
+		<td>scenario</td>
+		<td>and it should have link to</td>
+		<td colspan="2">target</td>
+	</tr>
+	<tr>
+		<td>page</td>
+		<td>$IT</td>
+		<td>should have link to</td>
+		<td>@target</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=8208460530945616667>
+	<tr>
+		<td>scenario</td>
+		<td>page</td>
+		<td>source</td>
+		<td>should have creating link to</td>
+		<td>target</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>request page</td>
+		<td>@source</td>
+		<td colspan="2">200</td>
+	</tr>
+	<tr>
+		<td>ensure</td>
+		<td>content contains</td>
+		<td colspan="3">@target&lt;a title="create page" href="@target?edit&amp;nonExistent=true"&gt;[?]&lt;/a&gt;</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=6260653590763472002>
+	<tr>
+		<td>scenario</td>
+		<td>it should have creating link to</td>
+		<td colspan="2">target</td>
+	</tr>
+	<tr>
+		<td>page</td>
+		<td>$IT</td>
+		<td>should have creating link to</td>
+		<td>@target</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=5808456526150882353>
+	<tr>
+		<td>scenario</td>
+		<td>page</td>
+		<td>source</td>
+		<td>should contain</td>
+		<td>text</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>request page</td>
+		<td>@source</td>
+		<td colspan="2">200</td>
+	</tr>
+	<tr>
+		<td>ensure</td>
+		<td>content contains</td>
+		<td colspan="3">@text</td>
+	</tr>
+	<tr>
+		<td>show</td>
+		<td colspan="4">content</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=2092223767647621430>
+	<tr>
+		<td>scenario</td>
+		<td>page</td>
+		<td>source</td>
+		<td>should not contain</td>
+		<td>text</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>request page</td>
+		<td>@source</td>
+		<td colspan="2">200</td>
+	</tr>
+	<tr>
+		<td>reject</td>
+		<td>content contains</td>
+		<td colspan="3">@text</td>
+	</tr>
+	<tr>
+		<td>show</td>
+		<td colspan="4">content</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=2930202446768913614>
+	<tr>
+		<td>scenario</td>
+		<td>page</td>
+		<td>source</td>
+		<td>should match</td>
+		<td>text</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>request page</td>
+		<td>@source</td>
+		<td colspan="2">200</td>
+	</tr>
+	<tr>
+		<td>ensure</td>
+		<td>content matches</td>
+		<td colspan="3">@text</td>
+	</tr>
+	<tr>
+		<td>show</td>
+		<td colspan="4">content</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=2504990233589986943>
+	<tr>
+		<td>scenario</td>
+		<td>it should contain</td>
+		<td colspan="2">text</td>
+	</tr>
+	<tr>
+		<td>page</td>
+		<td>$IT</td>
+		<td>should contain</td>
+		<td>@text</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=6953869650375953091>
+	<tr>
+		<td>scenario</td>
+		<td>it should not contain</td>
+		<td colspan="2">text</td>
+	</tr>
+	<tr>
+		<td>page</td>
+		<td>$IT</td>
+		<td>should not contain</td>
+		<td>@text</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=8706413217541710895>
+	<tr>
+		<td>scenario</td>
+		<td>it should contain</td>
+		<td>text</td>
+		<td>in line</td>
+		<td>symbol</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>request page</td>
+		<td>$IT</td>
+		<td colspan="2">200</td>
+	</tr>
+	<tr>
+		<td>$@symbol=</td>
+		<td>line number containing</td>
+		<td colspan="3">@text</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=2860971199542063610>
+	<tr>
+		<td>scenario</td>
+		<td>it should match</td>
+		<td colspan="2">text</td>
+	</tr>
+	<tr>
+		<td>page</td>
+		<td>$IT</td>
+		<td>should match</td>
+		<td>@text</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=1792482428398503120>
+	<tr>
+		<td>scenario</td>
+		<td>test results for page</td>
+		<td>source</td>
+		<td>should contain</td>
+		<td>text</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>request page</td>
+		<td>@source?test</td>
+		<td colspan="2">200</td>
+	</tr>
+	<tr>
+		<td>ensure</td>
+		<td>content contains</td>
+		<td colspan="3">@text</td>
+	</tr>
+	<tr>
+		<td>show</td>
+		<td colspan="4">content</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=1471690337884177870>
+	<tr>
+		<td>scenario</td>
+		<td>its test results should contain</td>
+		<td colspan="2">text</td>
+	</tr>
+	<tr>
+		<td>test results for page</td>
+		<td>$IT</td>
+		<td>should contain</td>
+		<td>@text</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=7957257852742795257>
+	<tr>
+		<td>scenario</td>
+		<td>test ressults for page</td>
+		<td>source</td>
+		<td>should not contain</td>
+		<td>text</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>request page</td>
+		<td>@source?test</td>
+		<td colspan="2">200</td>
+	</tr>
+	<tr>
+		<td>reject</td>
+		<td>content contains</td>
+		<td colspan="3">@text</td>
+	</tr>
+	<tr>
+		<td>show</td>
+		<td colspan="4">content</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=2045989683448821690>
+	<tr>
+		<td>scenario</td>
+		<td>and should contain</td>
+		<td>text</td>
+	</tr>
+	<tr>
+		<td>ensure</td>
+		<td>content contains</td>
+		<td>@text</td>
+	</tr>
+	<tr>
+		<td>show</td>
+		<td colspan="2">content</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=6318443519731434965>
+	<tr>
+		<td>scenario</td>
+		<td>and should match</td>
+		<td>text</td>
+	</tr>
+	<tr>
+		<td>ensure</td>
+		<td>content matches</td>
+		<td>@text</td>
+	</tr>
+	<tr>
+		<td>show</td>
+		<td colspan="2">content</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=5135547146344592943>
+	<tr>
+		<td>scenario</td>
+		<td>and should not contain</td>
+		<td>text</td>
+	</tr>
+	<tr>
+		<td>reject</td>
+		<td>content contains</td>
+		<td>@text</td>
+	</tr>
+	<tr>
+		<td>show</td>
+		<td colspan="2">content</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=1853356741205564621>
+	<tr>
+		<td>scenario</td>
+		<td>widget</td>
+		<td>wikiText</td>
+		<td>should render</td>
+		<td>htmlText</td>
+	</tr>
+	<tr>
+		<td>create page</td>
+		<td>WidgetPage</td>
+		<td>with content</td>
+		<td colspan="2">@wikiText</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>request page</td>
+		<td>WidgetPage</td>
+		<td colspan="2">200</td>
+	</tr>
+	<tr>
+		<td>ensure</td>
+		<td>content matches</td>
+		<td colspan="3">@htmlText</td>
+	</tr>
+	<tr>
+		<td>show</td>
+		<td colspan="4">content</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=1825162916026381757>
+	<tr>
+		<td>scenario</td>
+		<td>the line</td>
+		<td>after</td>
+		<td>should come after</td>
+		<td>before</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>echo int</td>
+		<td>$@before</td>
+		<td colspan="2">&lt; $@after</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=5956228496904939313>
+	<tr>
+		<td>scenario</td>
+		<td colspan="3">pass</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>echo</td>
+		<td>pass</td>
+		<td>pass</td>
+	</tr>
+</table>
+</div>
+</div>
+<br/></div>
+</div>
+<br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand All</a></li><li><a href='#' class='collapseall'>Collapse All</a></li></ul>
+	<p class="title">Included page: <a href="FitNesse.SuiteAcceptanceTests.SuiteWidgetTests.SetUp">.FitNesse.SuiteAcceptanceTests.SuiteWidgetTests.SetUp</a> <a href="FitNesse.SuiteAcceptanceTests.SuiteWidgetTests.SetUp?edit&amp;redirectToReferer=true&amp;redirectAction=" class="edit">(edit)</a></p>
+	<div><div class="collapsible"><ul><li><a href='#' class='expandall'>Expand All</a></li><li><a href='#' class='collapseall'>Collapse All</a></li></ul>
+	<p class="title">Included page: <a href="FitNesse.SuiteAcceptanceTests.SetUp">&lt;SuiteAcceptanceTests.SetUp</a> <a href="FitNesse.SuiteAcceptanceTests.SetUp?edit&amp;redirectToReferer=true&amp;redirectAction=" class="edit">(edit)</a></p>
+	<div><table _TABLENUMBER=3894520322991820454>
+	<tr>
+		<td>Import</td>
+	</tr>
+	<tr>
+		<td>fitnesse.fixtures</td>
+	</tr>
+</table>
+<br/><table _TABLENUMBER=8137646391137909451>
+	<tr>
+		<td><span class="pass">SetUp</span></td>
+	</tr>
+</table>
+</div>
+</div>
+<br/><br/><table _TABLENUMBER=7812656033550499953>
+	<tr>
+		<td>Library</td>
+	</tr>
+	<tr>
+		<td><span class="pass">echo fixture</span></td>
+	</tr>
+	<tr>
+		<td><span class="pass">page driver</span></td>
+	</tr>
+</table>
+<br/></div>
+</div>
+<br/><table _TABLENUMBER=5250977353144713121>
+	<tr>
+		<td colspan="4">script</td>
+	</tr>
+	<tr class="scenario closed">
+		<td class="pass">given page</td>
+		<td colspan="3" class="pass">ParentPage</td>
+	</tr><tr class="scenario-detail"><td colspan="4"><table _TABLENUMBER=8231619659635343366 table_name="scriptTable_28_0/scriptTable_1">
+	<tr>
+		<td>scenario</td>
+		<td>given page</td>
+		<td colspan="2">page</td>
+	</tr>
+	<tr class="scenario closed">
+		<td class="pass">given page</td>
+		<td class="pass">ParentPage</td>
+		<td class="pass">with content</td>
+		<td class="pass">nothing</td>
+	</tr><tr class="scenario-detail"><td colspan="4"><table _TABLENUMBER=2727943193309990273 table_name="scriptTable_28_0/scriptTable_1_0/scriptTable_0">
+	<tr>
+		<td>scenario</td>
+		<td>given page</td>
+		<td>page</td>
+		<td>with content</td>
+		<td>content</td>
+	</tr>
+	<tr>
+		<td>create page</td>
+		<td>ParentPage</td>
+		<td>with content</td>
+		<td colspan="2">nothing</td>
+	</tr>
+	<tr>
+		<td>$IT<-[ParentPage]</td>
+		<td>echo</td>
+		<td colspan="3">ParentPage</td>
+	</tr>
+</table></td></tr>
+</table></td></tr>
+	<tr class="scenario closed">
+		<td class="pass">given page</td>
+		<td class="pass">ParentPage.ChildPage</td>
+		<td class="pass">with content</td>
+		<td class="pass">!include &lt;ParentPage</td>
+	</tr><tr class="scenario-detail"><td colspan="4"><table _TABLENUMBER=4447941068638729463 table_name="scriptTable_28_1/scriptTable_0">
+	<tr>
+		<td>scenario</td>
+		<td>given page</td>
+		<td>page</td>
+		<td>with content</td>
+		<td>content</td>
+	</tr>
+	<tr>
+		<td>create page</td>
+		<td>ParentPage.ChildPage</td>
+		<td>with content</td>
+		<td colspan="2">!include <ParentPage></td>
+	</tr>
+	<tr>
+		<td>$IT<-[ParentPage.ChildPage]</td>
+		<td>echo</td>
+		<td colspan="3">ParentPage.ChildPage</td>
+	</tr>
+</table></td></tr>
+	<tr class="scenario closed">
+		<td class="pass">it should contain</td>
+		<td colspan="3" class="pass">Cannot include parent page</td>
+	</tr><tr class="scenario-detail"><td colspan="4"><table _TABLENUMBER=6312613175204407842 table_name="scriptTable_28_2/scriptTable_12">
+	<tr>
+		<td>scenario</td>
+		<td>it should contain</td>
+		<td colspan="2">text</td>
+	</tr>
+	<tr class="scenario closed">
+		<td class="pass">page</td>
+		<td class="pass">$IT->[ParentPage.ChildPage]</td>
+		<td class="pass">should contain</td>
+		<td class="pass">Cannot include parent page</td>
+	</tr><tr class="scenario-detail"><td colspan="4"><table _TABLENUMBER=2008661522630817960 table_name="scriptTable_28_2/scriptTable_12_0/scriptTable_9">
+	<tr>
+		<td>scenario</td>
+		<td>page</td>
+		<td>source</td>
+		<td>should contain</td>
+		<td>text</td>
+	</tr>
+	<tr>
+		<td>check</td>
+		<td>request page</td>
+		<td>$IT->[ParentPage.ChildPage]</td>
+		<td colspan="2"><span class="pass">200</span></td>
+	</tr>
+	<tr>
+		<td><span class="pass">ensure</span></td>
+		<td>content contains</td>
+		<td colspan="3">Cannot include parent page</td>
+	</tr>
+	<tr>
+		<td>show</td>
+		<td colspan="4">content</td>
+	<td>HTTP/1.1 200 OK
+Content-Length: 3256
+Connection: close
+Server: FitNesse-v20121220
+Cache-Control: max-age=0
+Content-Type: text/html; charset=utf-8
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"/&gt;
+  &lt;title&gt;ParentPage.ChildPage&lt;/title&gt;
+    &lt;!--[if lt IE 9]&gt;
+   &lt;script&gt;
+    document.createElement('header');
+    document.createElement('nav');
+    document.createElement('section');
+    document.createElement('article');
+    document.createElement('footer');
+   &lt;/script&gt;
+  &lt;![endif]--&gt;
+  
+  &lt;link rel="stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse_wiki.css" /&gt;
+  &lt;link rel="stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse_pages.css" /&gt;
+  &lt;link rel="stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse_straight.css" /&gt;
+  &lt;link rel="stylesheet" type="text/css" href="/files/fitnesse/wysiwyg/wysiwyg.css" media="screen"/&gt;
+  &lt;link rel="wysiwyg.base" href="/" /&gt;
+  &lt;link rel="wysiwyg.stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse.css" media="screen" /&gt;
+  &lt;link rel="wysiwyg.stylesheet" type="text/css" href="/files/fitnesse/wysiwyg/editor.css" media="screen" /&gt;
+  &lt;link rel="shortcut icon" type="image/x-icon" href="/files/fitnesse/images/favicon.ico" /&gt;
+  &lt;script src="/files/fitnesse/javascript/jquery-1.7.2.min.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="/files/fitnesse/javascript/fitnesse.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="/files/fitnesse/wysiwyg/wysiwyg.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="/files/fitnesse/javascript/fitnesse_straight.js" type="text/javascript"&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body class="wikiPage"&gt;
+
+  &lt;header&gt;
+   &lt;a href="/FrontPage" id="art_niche"&gt;&lt;span&gt;FitNesse&lt;/span&gt;&lt;/a&gt;
+
+&lt;ul&gt;
+ &lt;li&gt;&lt;a href="/ParentPage"&gt;ParentPage&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;ChildPage&lt;/h1&gt;
+
+
+
+  &lt;/header&gt;
+  
+    
+  &lt;nav&gt;
+   &lt;ul&gt;
+    &lt;li&gt;&lt;a href="ParentPage.ChildPage?edit" accesskey="e"&gt;Edit&lt;/a&gt;&lt;/li&gt;
+   
+  &lt;li id="add"&gt;&lt;a href="ParentPage.ChildPage?new" class="label"&gt;Add&lt;/a&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;a href="ParentPage.ChildPage?new&amp;pageType=Static"&gt;Static page&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="ParentPage.ChildPage?new&amp;pageType=Test"&gt;Test page&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="ParentPage.ChildPage?new&amp;pageType=Suite"&gt;Suite page&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+  
+ &lt;li id="tools"&gt;&lt;a href="#" class="label"&gt;Tools&lt;/a&gt;
+      &lt;ul&gt;
+     &lt;li&gt;&lt;a href="ParentPage.ChildPage?properties" accesskey="p"&gt;Properties&lt;/a&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;a href="ParentPage.ChildPage?whereUsed" accesskey="w"&gt;Where Used&lt;/a&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;a href="ParentPage.ChildPage?versions" accesskey="v"&gt;Versions&lt;/a&gt;&lt;/li&gt;
+    
+     &lt;li class="divider"&gt;&lt;a href="ParentPage.ChildPage?refactor&amp;amp;type=rename"&gt;Rename&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="ParentPage.ChildPage?refactor&amp;amp;type=move"&gt;Move&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="ParentPage.ChildPage?refactor&amp;amp;type=replace"&gt;Replace&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="ParentPage.ChildPage?deletePage"&gt;Delete&lt;/a&gt;&lt;/li&gt;
+       &lt;li  class="divider"&gt;&lt;a href="/files" accesskey="f"&gt;Files&lt;/a&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;a href="?searchForm" accesskey="s"&gt;Search&lt;/a&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;a href="/RecentChanges" accesskey=""&gt;Recent Changes&lt;/a&gt;&lt;/li&gt;
+  
+  
+     &lt;li class="divider"&gt;&lt;a href=".FitNesse.UserGuide" accesskey=""&gt;User Guide&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+  &lt;/nav&gt;
+  
+  &lt;article&gt;
+   &lt;span class="meta"&gt;Error! Cannot include parent page (&amp;lt;ParentPage).
+&lt;/span&gt;&amp;gt;  &lt;/article&gt;
+  
+    &lt;footer&gt;
+     &lt;/footer&gt;
+    
+ &lt;/body&gt;
+&lt;/html&gt;
+</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table>
+<br/><div class="collapsible closed"><ul><li><a href='#' class='expandall'>Expand All</a></li><li><a href='#' class='collapseall'>Collapse All</a></li></ul>
+	<p class="title">Included page: <a href="FitNesse.SuiteAcceptanceTests.TearDown">.FitNesse.SuiteAcceptanceTests.TearDown</a> <a href="FitNesse.SuiteAcceptanceTests.TearDown?edit&amp;redirectToReferer=true&amp;redirectAction=" class="edit">(edit)</a></p>
+	<div><hr/>
+<br/><table _TABLENUMBER=4052845905900325099>
+	<tr>
+		<td><span class="pass">tear down</span></td>
+	</tr>
+</table>
+<br/></div>
+</div>
+<br/>]]></content>
+    <relativePageName>ShouldNotBeAbleToIncludeParentPage</relativePageName>
+    
+        <tables>
+            <table>
+        <name>scenarioTable_0</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[given page]]></col>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[with content]]></col>
+                    <col><![CDATA[content]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[create page]]></col>
+                    <col><![CDATA[@page]]></col>
+                    <col><![CDATA[with content]]></col>
+                    <col><![CDATA[@content]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[$IT=]]></col>
+                    <col><![CDATA[echo]]></col>
+                    <col><![CDATA[@page]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_1</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[given page]]></col>
+                    <col><![CDATA[page]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[given page]]></col>
+                    <col><![CDATA[@page]]></col>
+                    <col><![CDATA[with content]]></col>
+                    <col><![CDATA[nothing]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_2</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[given test page]]></col>
+                    <col><![CDATA[page]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[given page]]></col>
+                    <col><![CDATA[@page]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[make]]></col>
+                    <col><![CDATA[@page]]></col>
+                    <col><![CDATA[a test page]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_3</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[given slim test page]]></col>
+                    <col><![CDATA[page]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[given page]]></col>
+                    <col><![CDATA[@page]]></col>
+                    <col><![CDATA[with content]]></col>
+                    <col><![CDATA[!define TEST_SYSTEM {slim}]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[make]]></col>
+                    <col><![CDATA[@page]]></col>
+                    <col><![CDATA[a test page]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_4</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[source]]></col>
+                    <col><![CDATA[should have link to]]></col>
+                    <col><![CDATA[target]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[check]]></col>
+                    <col><![CDATA[request page]]></col>
+                    <col><![CDATA[@source]]></col>
+                    <col><![CDATA[200]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[ensure]]></col>
+                    <col><![CDATA[content contains]]></col>
+                    <col><![CDATA[&lt;a href="@target"&gt;]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[$IT=]]></col>
+                    <col><![CDATA[echo]]></col>
+                    <col><![CDATA[@source]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_5</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[it should have link to]]></col>
+                    <col><![CDATA[target]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[$IT]]></col>
+                    <col><![CDATA[should have link to]]></col>
+                    <col><![CDATA[@target]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_6</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[and it should have link to]]></col>
+                    <col><![CDATA[target]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[$IT]]></col>
+                    <col><![CDATA[should have link to]]></col>
+                    <col><![CDATA[@target]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_7</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[source]]></col>
+                    <col><![CDATA[should have creating link to]]></col>
+                    <col><![CDATA[target]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[check]]></col>
+                    <col><![CDATA[request page]]></col>
+                    <col><![CDATA[@source]]></col>
+                    <col><![CDATA[200]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[ensure]]></col>
+                    <col><![CDATA[content contains]]></col>
+                    <col><![CDATA[@target&lt;a title="create page" href="@target?edit&amp;nonExistent=true"&gt;[?]&lt;/a&gt;]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_8</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[it should have creating link to]]></col>
+                    <col><![CDATA[target]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[$IT]]></col>
+                    <col><![CDATA[should have creating link to]]></col>
+                    <col><![CDATA[@target]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_9</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[source]]></col>
+                    <col><![CDATA[should contain]]></col>
+                    <col><![CDATA[text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[check]]></col>
+                    <col><![CDATA[request page]]></col>
+                    <col><![CDATA[@source]]></col>
+                    <col><![CDATA[200]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[ensure]]></col>
+                    <col><![CDATA[content contains]]></col>
+                    <col><![CDATA[@text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[show]]></col>
+                    <col><![CDATA[content]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_10</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[source]]></col>
+                    <col><![CDATA[should not contain]]></col>
+                    <col><![CDATA[text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[check]]></col>
+                    <col><![CDATA[request page]]></col>
+                    <col><![CDATA[@source]]></col>
+                    <col><![CDATA[200]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[reject]]></col>
+                    <col><![CDATA[content contains]]></col>
+                    <col><![CDATA[@text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[show]]></col>
+                    <col><![CDATA[content]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_11</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[source]]></col>
+                    <col><![CDATA[should match]]></col>
+                    <col><![CDATA[text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[check]]></col>
+                    <col><![CDATA[request page]]></col>
+                    <col><![CDATA[@source]]></col>
+                    <col><![CDATA[200]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[ensure]]></col>
+                    <col><![CDATA[content matches]]></col>
+                    <col><![CDATA[@text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[show]]></col>
+                    <col><![CDATA[content]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_12</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[it should contain]]></col>
+                    <col><![CDATA[text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[$IT]]></col>
+                    <col><![CDATA[should contain]]></col>
+                    <col><![CDATA[@text]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_13</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[it should not contain]]></col>
+                    <col><![CDATA[text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[$IT]]></col>
+                    <col><![CDATA[should not contain]]></col>
+                    <col><![CDATA[@text]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_14</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[it should contain]]></col>
+                    <col><![CDATA[text]]></col>
+                    <col><![CDATA[in line]]></col>
+                    <col><![CDATA[symbol]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[check]]></col>
+                    <col><![CDATA[request page]]></col>
+                    <col><![CDATA[$IT]]></col>
+                    <col><![CDATA[200]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[$@symbol=]]></col>
+                    <col><![CDATA[line number containing]]></col>
+                    <col><![CDATA[@text]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_15</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[it should match]]></col>
+                    <col><![CDATA[text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[$IT]]></col>
+                    <col><![CDATA[should match]]></col>
+                    <col><![CDATA[@text]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_16</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[test results for page]]></col>
+                    <col><![CDATA[source]]></col>
+                    <col><![CDATA[should contain]]></col>
+                    <col><![CDATA[text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[check]]></col>
+                    <col><![CDATA[request page]]></col>
+                    <col><![CDATA[@source?test]]></col>
+                    <col><![CDATA[200]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[ensure]]></col>
+                    <col><![CDATA[content contains]]></col>
+                    <col><![CDATA[@text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[show]]></col>
+                    <col><![CDATA[content]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_17</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[its test results should contain]]></col>
+                    <col><![CDATA[text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[test results for page]]></col>
+                    <col><![CDATA[$IT]]></col>
+                    <col><![CDATA[should contain]]></col>
+                    <col><![CDATA[@text]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_18</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[test ressults for page]]></col>
+                    <col><![CDATA[source]]></col>
+                    <col><![CDATA[should not contain]]></col>
+                    <col><![CDATA[text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[check]]></col>
+                    <col><![CDATA[request page]]></col>
+                    <col><![CDATA[@source?test]]></col>
+                    <col><![CDATA[200]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[reject]]></col>
+                    <col><![CDATA[content contains]]></col>
+                    <col><![CDATA[@text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[show]]></col>
+                    <col><![CDATA[content]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_19</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[and should contain]]></col>
+                    <col><![CDATA[text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[ensure]]></col>
+                    <col><![CDATA[content contains]]></col>
+                    <col><![CDATA[@text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[show]]></col>
+                    <col><![CDATA[content]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_20</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[and should match]]></col>
+                    <col><![CDATA[text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[ensure]]></col>
+                    <col><![CDATA[content matches]]></col>
+                    <col><![CDATA[@text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[show]]></col>
+                    <col><![CDATA[content]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_21</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[and should not contain]]></col>
+                    <col><![CDATA[text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[reject]]></col>
+                    <col><![CDATA[content contains]]></col>
+                    <col><![CDATA[@text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[show]]></col>
+                    <col><![CDATA[content]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_22</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[widget]]></col>
+                    <col><![CDATA[wikiText]]></col>
+                    <col><![CDATA[should render]]></col>
+                    <col><![CDATA[htmlText]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[create page]]></col>
+                    <col><![CDATA[WidgetPage]]></col>
+                    <col><![CDATA[with content]]></col>
+                    <col><![CDATA[@wikiText]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[check]]></col>
+                    <col><![CDATA[request page]]></col>
+                    <col><![CDATA[WidgetPage]]></col>
+                    <col><![CDATA[200]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[ensure]]></col>
+                    <col><![CDATA[content matches]]></col>
+                    <col><![CDATA[@htmlText]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[show]]></col>
+                    <col><![CDATA[content]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_23</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[the line]]></col>
+                    <col><![CDATA[after]]></col>
+                    <col><![CDATA[should come after]]></col>
+                    <col><![CDATA[before]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[check]]></col>
+                    <col><![CDATA[echo int]]></col>
+                    <col><![CDATA[$@before]]></col>
+                    <col><![CDATA[&lt; $@after]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scenarioTable_24</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[pass]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[check]]></col>
+                    <col><![CDATA[echo]]></col>
+                    <col><![CDATA[pass]]></col>
+                    <col><![CDATA[pass]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>import_25</name>
+                <row>
+                    <col><![CDATA[Import]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[fitnesse.fixtures]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>decisionTable_26</name>
+                <row>
+                    <col><![CDATA[pass(SetUp)]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>library_27</name>
+                <row>
+                    <col><![CDATA[Library]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[pass(echo fixture)]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[pass(page driver)]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scriptTable_28</name>
+                <row>
+                    <col><![CDATA[script]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[given page]]></col>
+                    <col><![CDATA[ParentPage]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[given page]]></col>
+                    <col><![CDATA[ParentPage.ChildPage]]></col>
+                    <col><![CDATA[with content]]></col>
+                    <col><![CDATA[!include &lt;ParentPage]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[it should contain]]></col>
+                    <col><![CDATA[Cannot include parent page]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scriptTable_28_0/scriptTable_1</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[given page]]></col>
+                    <col><![CDATA[page]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[given page]]></col>
+                    <col><![CDATA[ParentPage]]></col>
+                    <col><![CDATA[with content]]></col>
+                    <col><![CDATA[nothing]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scriptTable_28_0/scriptTable_1_0/scriptTable_0</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[given page]]></col>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[with content]]></col>
+                    <col><![CDATA[content]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[create page]]></col>
+                    <col><![CDATA[ParentPage]]></col>
+                    <col><![CDATA[with content]]></col>
+                    <col><![CDATA[nothing]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[$IT<-[ParentPage]]]></col>
+                    <col><![CDATA[echo]]></col>
+                    <col><![CDATA[ParentPage]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scriptTable_28_1/scriptTable_0</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[given page]]></col>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[with content]]></col>
+                    <col><![CDATA[content]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[create page]]></col>
+                    <col><![CDATA[ParentPage.ChildPage]]></col>
+                    <col><![CDATA[with content]]></col>
+                    <col><![CDATA[!include <ParentPage>]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[$IT<-[ParentPage.ChildPage]]]></col>
+                    <col><![CDATA[echo]]></col>
+                    <col><![CDATA[ParentPage.ChildPage]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scriptTable_28_2/scriptTable_12</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[it should contain]]></col>
+                    <col><![CDATA[text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[$IT->[ParentPage.ChildPage]]]></col>
+                    <col><![CDATA[should contain]]></col>
+                    <col><![CDATA[Cannot include parent page]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>scriptTable_28_2/scriptTable_12_0/scriptTable_9</name>
+                <row>
+                    <col><![CDATA[scenario]]></col>
+                    <col><![CDATA[page]]></col>
+                    <col><![CDATA[source]]></col>
+                    <col><![CDATA[should contain]]></col>
+                    <col><![CDATA[text]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[check]]></col>
+                    <col><![CDATA[request page]]></col>
+                    <col><![CDATA[$IT->[ParentPage.ChildPage]]]></col>
+                    <col><![CDATA[pass(200)]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[pass(ensure)]]></col>
+                    <col><![CDATA[content contains]]></col>
+                    <col><![CDATA[Cannot include parent page]]></col>
+          
+        </row>
+                <row>
+                    <col><![CDATA[show]]></col>
+                    <col><![CDATA[content]]></col>
+                    <col><![CDATA[HTTP/1.1 200 OK
+Content-Length: 3256
+Connection: close
+Server: FitNesse-v20121220
+Cache-Control: max-age=0
+Content-Type: text/html; charset=utf-8
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"/&gt;
+  &lt;title&gt;ParentPage.ChildPage&lt;/title&gt;
+    &lt;!--[if lt IE 9]&gt;
+   &lt;script&gt;
+    document.createElement('header');
+    document.createElement('nav');
+    document.createElement('section');
+    document.createElement('article');
+    document.createElement('footer');
+   &lt;/script&gt;
+  &lt;![endif]--&gt;
+  
+  &lt;link rel="stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse_wiki.css" /&gt;
+  &lt;link rel="stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse_pages.css" /&gt;
+  &lt;link rel="stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse_straight.css" /&gt;
+  &lt;link rel="stylesheet" type="text/css" href="/files/fitnesse/wysiwyg/wysiwyg.css" media="screen"/&gt;
+  &lt;link rel="wysiwyg.base" href="/" /&gt;
+  &lt;link rel="wysiwyg.stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse.css" media="screen" /&gt;
+  &lt;link rel="wysiwyg.stylesheet" type="text/css" href="/files/fitnesse/wysiwyg/editor.css" media="screen" /&gt;
+  &lt;link rel="shortcut icon" type="image/x-icon" href="/files/fitnesse/images/favicon.ico" /&gt;
+  &lt;script src="/files/fitnesse/javascript/jquery-1.7.2.min.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="/files/fitnesse/javascript/fitnesse.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="/files/fitnesse/wysiwyg/wysiwyg.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="/files/fitnesse/javascript/fitnesse_straight.js" type="text/javascript"&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body class="wikiPage"&gt;
+
+  &lt;header&gt;
+   &lt;a href="/FrontPage" id="art_niche"&gt;&lt;span&gt;FitNesse&lt;/span&gt;&lt;/a&gt;
+
+&lt;ul&gt;
+ &lt;li&gt;&lt;a href="/ParentPage"&gt;ParentPage&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;ChildPage&lt;/h1&gt;
+
+
+
+  &lt;/header&gt;
+  
+    
+  &lt;nav&gt;
+   &lt;ul&gt;
+    &lt;li&gt;&lt;a href="ParentPage.ChildPage?edit" accesskey="e"&gt;Edit&lt;/a&gt;&lt;/li&gt;
+   
+  &lt;li id="add"&gt;&lt;a href="ParentPage.ChildPage?new" class="label"&gt;Add&lt;/a&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;a href="ParentPage.ChildPage?new&amp;pageType=Static"&gt;Static page&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="ParentPage.ChildPage?new&amp;pageType=Test"&gt;Test page&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="ParentPage.ChildPage?new&amp;pageType=Suite"&gt;Suite page&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+  
+ &lt;li id="tools"&gt;&lt;a href="#" class="label"&gt;Tools&lt;/a&gt;
+      &lt;ul&gt;
+     &lt;li&gt;&lt;a href="ParentPage.ChildPage?properties" accesskey="p"&gt;Properties&lt;/a&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;a href="ParentPage.ChildPage?whereUsed" accesskey="w"&gt;Where Used&lt;/a&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;a href="ParentPage.ChildPage?versions" accesskey="v"&gt;Versions&lt;/a&gt;&lt;/li&gt;
+    
+     &lt;li class="divider"&gt;&lt;a href="ParentPage.ChildPage?refactor&amp;amp;type=rename"&gt;Rename&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="ParentPage.ChildPage?refactor&amp;amp;type=move"&gt;Move&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="ParentPage.ChildPage?refactor&amp;amp;type=replace"&gt;Replace&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="ParentPage.ChildPage?deletePage"&gt;Delete&lt;/a&gt;&lt;/li&gt;
+       &lt;li  class="divider"&gt;&lt;a href="/files" accesskey="f"&gt;Files&lt;/a&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;a href="?searchForm" accesskey="s"&gt;Search&lt;/a&gt;&lt;/li&gt;
+       &lt;li&gt;&lt;a href="/RecentChanges" accesskey=""&gt;Recent Changes&lt;/a&gt;&lt;/li&gt;
+  
+  
+     &lt;li class="divider"&gt;&lt;a href=".FitNesse.UserGuide" accesskey=""&gt;User Guide&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+  &lt;/nav&gt;
+  
+  &lt;article&gt;
+   &lt;span class="meta"&gt;Error! Cannot include parent page (&amp;lt;ParentPage).
+&lt;/span&gt;&amp;gt;  &lt;/article&gt;
+  
+    &lt;footer&gt;
+     &lt;/footer&gt;
+    
+ &lt;/body&gt;
+&lt;/html&gt;
+]]></col>
+          
+        </row>
+        
+      </table>
+            <table>
+        <name>decisionTable_29</name>
+                <row>
+                    <col><![CDATA[pass(tear down)]]></col>
+          
+        </row>
+        
+      </table>
+      
+    </tables>
+    
+    
+    <instructions>
+            <instructionResult>
+        <instruction><![CDATA[[import_25_0, import, fitnesse.fixtures]]]></instruction>
+        <slimResult><![CDATA[OK]]></slimResult>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction><![CDATA[[decisionTable_26_0, make, decisionTable_26, SetUp]]]></instruction>
+        <slimResult><![CDATA[OK]]></slimResult>
+                <expectation>
+          <status>right</status>
+          <instructionId>decisionTable_26_0</instructionId>
+          <col>0</col>
+          <row>0</row>
+          <type>ConstructionExpectation</type>
+                    <actual><![CDATA[OK]]></actual>
+                              <expected><![CDATA[SetUp]]></expected>
+                              <evaluationMessage><![CDATA[pass(SetUp)]]></evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction><![CDATA[[decisionTable_26_1, call, decisionTable_26, table, []]]]></instruction>
+        <slimResult><![CDATA[__EXCEPTION__:fitnesse.slim.SlimError: message:<<NO_METHOD_IN_CLASS table[1] fitnesse.fixtures.SetUp.>>
+	at fitnesse.slim.MethodExecutionResult$NoMethod.returnValue(MethodExecutionResult.java:29)
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:207)
+	at fitnesse.slim.Statement.callMethodAtIndex(Statement.java:104)
+	at fitnesse.slim.Statement.call(Statement.java:97)
+	at fitnesse.slim.Statement.execute(Statement.java:77)
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:44)
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:39)
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:71)
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:81)
+	at fitnesse.slim.SlimServer.processTheInstructions(SlimServer.java:73)
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:57)
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:43)
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:30)
+	at fitnesse.slim.SlimService.accept(SlimService.java:98)
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:39)
+	at fitnesse.slim.SlimService.main(SlimService.java:26)
+]]></slimResult>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction><![CDATA[[library_27_0, make, library1, EchoFixture]]]></instruction>
+        <slimResult><![CDATA[OK]]></slimResult>
+                <expectation>
+          <status>right</status>
+          <instructionId>library_27_0</instructionId>
+          <col>0</col>
+          <row>1</row>
+          <type>ConstructionExpectation</type>
+                    <actual><![CDATA[OK]]></actual>
+                              <expected><![CDATA[echo fixture]]></expected>
+                              <evaluationMessage><![CDATA[pass(echo fixture)]]></evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction><![CDATA[[library_27_1, make, library2, PageDriver]]]></instruction>
+        <slimResult><![CDATA[OK]]></slimResult>
+                <expectation>
+          <status>right</status>
+          <instructionId>library_27_1</instructionId>
+          <col>0</col>
+          <row>2</row>
+          <type>ConstructionExpectation</type>
+                    <actual><![CDATA[OK]]></actual>
+                              <expected><![CDATA[page driver]]></expected>
+                              <evaluationMessage><![CDATA[pass(page driver)]]></evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction><![CDATA[[scriptTable_28_0/scriptTable_1_0/scriptTable_0_0, call, scriptTableActor, createPageWithContent, ParentPage, nothing]]]></instruction>
+        <slimResult><![CDATA[/__VOID__/]]></slimResult>
+                <expectation>
+          <status>ignored</status>
+          <instructionId>scriptTable_28_0/scriptTable_1_0/scriptTable_0_0</instructionId>
+          <col>1</col>
+          <row>1</row>
+          <type>ArgumentExpectation</type>
+                                        <evaluationMessage><![CDATA[]]></evaluationMessage>
+                  </expectation>
+                <expectation>
+          <status>ignored</status>
+          <instructionId>scriptTable_28_0/scriptTable_1_0/scriptTable_0_0</instructionId>
+          <col>3</col>
+          <row>1</row>
+          <type>ArgumentExpectation</type>
+                                        <evaluationMessage><![CDATA[]]></evaluationMessage>
+                  </expectation>
+                <expectation>
+          <status>ignored</status>
+          <instructionId>scriptTable_28_0/scriptTable_1_0/scriptTable_0_0</instructionId>
+          <col>0</col>
+          <row>1</row>
+          <type>ScriptActionExpectation</type>
+                    <actual><![CDATA[/__VOID__/]]></actual>
+                              <expected><![CDATA[create page]]></expected>
+                              <evaluationMessage><![CDATA[create page]]></evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction><![CDATA[[scriptTable_28_0/scriptTable_1_0/scriptTable_0_1, callAndAssign, IT, scriptTableActor, echo, ParentPage]]]></instruction>
+        <slimResult><![CDATA[ParentPage]]></slimResult>
+                <expectation>
+          <status>ignored</status>
+          <instructionId>scriptTable_28_0/scriptTable_1_0/scriptTable_0_1</instructionId>
+          <col>0</col>
+          <row>2</row>
+          <type>SymbolAssignmentExpectation</type>
+                    <actual><![CDATA[ParentPage]]></actual>
+                              <expected><![CDATA[$IT=]]></expected>
+                              <evaluationMessage><![CDATA[$IT<-[ParentPage]]]></evaluationMessage>
+                  </expectation>
+                <expectation>
+          <status>ignored</status>
+          <instructionId>scriptTable_28_0/scriptTable_1_0/scriptTable_0_1</instructionId>
+          <col>2</col>
+          <row>2</row>
+          <type>ArgumentExpectation</type>
+                                        <evaluationMessage><![CDATA[]]></evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction><![CDATA[[scriptTable_28_1/scriptTable_0_0, call, scriptTableActor, createPageWithContent, ParentPage.ChildPage, !include <ParentPage>]]]></instruction>
+        <slimResult><![CDATA[/__VOID__/]]></slimResult>
+                <expectation>
+          <status>ignored</status>
+          <instructionId>scriptTable_28_1/scriptTable_0_0</instructionId>
+          <col>1</col>
+          <row>1</row>
+          <type>ArgumentExpectation</type>
+                                        <evaluationMessage><![CDATA[]]></evaluationMessage>
+                  </expectation>
+                <expectation>
+          <status>ignored</status>
+          <instructionId>scriptTable_28_1/scriptTable_0_0</instructionId>
+          <col>3</col>
+          <row>1</row>
+          <type>ArgumentExpectation</type>
+                                        <evaluationMessage><![CDATA[]]></evaluationMessage>
+                  </expectation>
+                <expectation>
+          <status>ignored</status>
+          <instructionId>scriptTable_28_1/scriptTable_0_0</instructionId>
+          <col>0</col>
+          <row>1</row>
+          <type>ScriptActionExpectation</type>
+                    <actual><![CDATA[/__VOID__/]]></actual>
+                              <expected><![CDATA[create page]]></expected>
+                              <evaluationMessage><![CDATA[create page]]></evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction><![CDATA[[scriptTable_28_1/scriptTable_0_1, callAndAssign, IT, scriptTableActor, echo, ParentPage.ChildPage]]]></instruction>
+        <slimResult><![CDATA[ParentPage.ChildPage]]></slimResult>
+                <expectation>
+          <status>ignored</status>
+          <instructionId>scriptTable_28_1/scriptTable_0_1</instructionId>
+          <col>0</col>
+          <row>2</row>
+          <type>SymbolAssignmentExpectation</type>
+                    <actual><![CDATA[ParentPage.ChildPage]]></actual>
+                              <expected><![CDATA[$IT=]]></expected>
+                              <evaluationMessage><![CDATA[$IT<-[ParentPage.ChildPage]]]></evaluationMessage>
+                  </expectation>
+                <expectation>
+          <status>ignored</status>
+          <instructionId>scriptTable_28_1/scriptTable_0_1</instructionId>
+          <col>2</col>
+          <row>2</row>
+          <type>ArgumentExpectation</type>
+                                        <evaluationMessage><![CDATA[]]></evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction><![CDATA[[scriptTable_28_2/scriptTable_12_0/scriptTable_9_0, call, scriptTableActor, requestPage, $IT]]]></instruction>
+        <slimResult><![CDATA[200]]></slimResult>
+                <expectation>
+          <status>right</status>
+          <instructionId>scriptTable_28_2/scriptTable_12_0/scriptTable_9_0</instructionId>
+          <col>3</col>
+          <row>1</row>
+          <type>ReturnedValueExpectation</type>
+                    <actual><![CDATA[200]]></actual>
+                              <expected><![CDATA[200]]></expected>
+                              <evaluationMessage><![CDATA[pass(200)]]></evaluationMessage>
+                  </expectation>
+                <expectation>
+          <status>ignored</status>
+          <instructionId>scriptTable_28_2/scriptTable_12_0/scriptTable_9_0</instructionId>
+          <col>2</col>
+          <row>1</row>
+          <type>ArgumentExpectation</type>
+                                        <evaluationMessage><![CDATA[]]></evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction><![CDATA[[scriptTable_28_2/scriptTable_12_0/scriptTable_9_1, call, scriptTableActor, contentContains, Cannot include parent page]]]></instruction>
+        <slimResult><![CDATA[true]]></slimResult>
+                <expectation>
+          <status>right</status>
+          <instructionId>scriptTable_28_2/scriptTable_12_0/scriptTable_9_1</instructionId>
+          <col>0</col>
+          <row>2</row>
+          <type>EnsureActionExpectation</type>
+                    <actual><![CDATA[true]]></actual>
+                              <expected><![CDATA[ensure]]></expected>
+                              <evaluationMessage><![CDATA[pass(ensure)]]></evaluationMessage>
+                  </expectation>
+                <expectation>
+          <status>ignored</status>
+          <instructionId>scriptTable_28_2/scriptTable_12_0/scriptTable_9_1</instructionId>
+          <col>2</col>
+          <row>2</row>
+          <type>ArgumentExpectation</type>
+                                        <evaluationMessage><![CDATA[]]></evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction><![CDATA[[scriptTable_28_2/scriptTable_12_0/scriptTable_9_2, call, scriptTableActor, content]]]></instruction>
+        <slimResult><![CDATA[HTTP/1.1 200 OK
+Content-Length: 3256
+Connection: close
+Server: FitNesse-v20121220
+Cache-Control: max-age=0
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ParentPage.ChildPage</title>
+    <!--[if lt IE 9]>
+   <script>
+    document.createElement('header');
+    document.createElement('nav');
+    document.createElement('section');
+    document.createElement('article');
+    document.createElement('footer');
+   </script>
+  <![endif]-->
+  
+  <link rel="stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse_wiki.css" />
+  <link rel="stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse_pages.css" />
+  <link rel="stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse_straight.css" />
+  <link rel="stylesheet" type="text/css" href="/files/fitnesse/wysiwyg/wysiwyg.css" media="screen"/>
+  <link rel="wysiwyg.base" href="/" />
+  <link rel="wysiwyg.stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse.css" media="screen" />
+  <link rel="wysiwyg.stylesheet" type="text/css" href="/files/fitnesse/wysiwyg/editor.css" media="screen" />
+  <link rel="shortcut icon" type="image/x-icon" href="/files/fitnesse/images/favicon.ico" />
+  <script src="/files/fitnesse/javascript/jquery-1.7.2.min.js" type="text/javascript"></script>
+  <script src="/files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+  <script src="/files/fitnesse/wysiwyg/wysiwyg.js" type="text/javascript"></script>
+  <script src="/files/fitnesse/javascript/fitnesse_straight.js" type="text/javascript"></script>
+ </head>
+ <body class="wikiPage">
+
+  <header>
+   <a href="/FrontPage" id="art_niche"><span>FitNesse</span></a>
+
+<ul>
+ <li><a href="/ParentPage">ParentPage</a></li>
+</ul>
+<h1>ChildPage</h1>
+
+
+
+  </header>
+  
+    
+  <nav>
+   <ul>
+    <li><a href="ParentPage.ChildPage?edit" accesskey="e">Edit</a></li>
+   
+  <li id="add"><a href="ParentPage.ChildPage?new" class="label">Add</a>
+  <ul>
+   <li><a href="ParentPage.ChildPage?new&pageType=Static">Static page</a></li>
+   <li><a href="ParentPage.ChildPage?new&pageType=Test">Test page</a></li>
+   <li><a href="ParentPage.ChildPage?new&pageType=Suite">Suite page</a></li>
+  </ul>
+ </li>
+  
+ <li id="tools"><a href="#" class="label">Tools</a>
+      <ul>
+     <li><a href="ParentPage.ChildPage?properties" accesskey="p">Properties</a></li>
+       <li><a href="ParentPage.ChildPage?whereUsed" accesskey="w">Where Used</a></li>
+       <li><a href="ParentPage.ChildPage?versions" accesskey="v">Versions</a></li>
+    
+     <li class="divider"><a href="ParentPage.ChildPage?refactor&amp;type=rename">Rename</a></li>
+   <li><a href="ParentPage.ChildPage?refactor&amp;type=move">Move</a></li>
+   <li><a href="ParentPage.ChildPage?refactor&amp;type=replace">Replace</a></li>
+   <li><a href="ParentPage.ChildPage?deletePage">Delete</a></li>
+       <li  class="divider"><a href="/files" accesskey="f">Files</a></li>
+       <li><a href="?searchForm" accesskey="s">Search</a></li>
+       <li><a href="/RecentChanges" accesskey="">Recent Changes</a></li>
+  
+  
+     <li class="divider"><a href=".FitNesse.UserGuide" accesskey="">User Guide</a></li>
+    </ul>
+ </li>
+</ul>
+  </nav>
+  
+  <article>
+   <span class="meta">Error! Cannot include parent page (&lt;ParentPage).
+</span>&gt;  </article>
+  
+    <footer>
+     </footer>
+    
+ </body>
+</html>
+]]></slimResult>
+                <expectation>
+          <status>ignored</status>
+          <instructionId>scriptTable_28_2/scriptTable_12_0/scriptTable_9_2</instructionId>
+          <col>0</col>
+          <row>3</row>
+          <type>ShowActionExpectation</type>
+                    <actual><![CDATA[HTTP/1.1 200 OK
+Content-Length: 3256
+Connection: close
+Server: FitNesse-v20121220
+Cache-Control: max-age=0
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ParentPage.ChildPage</title>
+    <!--[if lt IE 9]>
+   <script>
+    document.createElement('header');
+    document.createElement('nav');
+    document.createElement('section');
+    document.createElement('article');
+    document.createElement('footer');
+   </script>
+  <![endif]-->
+  
+  <link rel="stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse_wiki.css" />
+  <link rel="stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse_pages.css" />
+  <link rel="stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse_straight.css" />
+  <link rel="stylesheet" type="text/css" href="/files/fitnesse/wysiwyg/wysiwyg.css" media="screen"/>
+  <link rel="wysiwyg.base" href="/" />
+  <link rel="wysiwyg.stylesheet" type="text/css" href="/files/fitnesse/css/fitnesse.css" media="screen" />
+  <link rel="wysiwyg.stylesheet" type="text/css" href="/files/fitnesse/wysiwyg/editor.css" media="screen" />
+  <link rel="shortcut icon" type="image/x-icon" href="/files/fitnesse/images/favicon.ico" />
+  <script src="/files/fitnesse/javascript/jquery-1.7.2.min.js" type="text/javascript"></script>
+  <script src="/files/fitnesse/javascript/fitnesse.js" type="text/javascript"></script>
+  <script src="/files/fitnesse/wysiwyg/wysiwyg.js" type="text/javascript"></script>
+  <script src="/files/fitnesse/javascript/fitnesse_straight.js" type="text/javascript"></script>
+ </head>
+ <body class="wikiPage">
+
+  <header>
+   <a href="/FrontPage" id="art_niche"><span>FitNesse</span></a>
+
+<ul>
+ <li><a href="/ParentPage">ParentPage</a></li>
+</ul>
+<h1>ChildPage</h1>
+
+
+
+  </header>
+  
+    
+  <nav>
+   <ul>
+    <li><a href="ParentPage.ChildPage?edit" accesskey="e">Edit</a></li>
+   
+  <li id="add"><a href="ParentPage.ChildPage?new" class="label">Add</a>
+  <ul>
+   <li><a href="ParentPage.ChildPage?new&pageType=Static">Static page</a></li>
+   <li><a href="ParentPage.ChildPage?new&pageType=Test">Test page</a></li>
+   <li><a href="ParentPage.ChildPage?new&pageType=Suite">Suite page</a></li>
+  </ul>
+ </li>
+  
+ <li id="tools"><a href="#" class="label">Tools</a>
+      <ul>
+     <li><a href="ParentPage.ChildPage?properties" accesskey="p">Properties</a></li>
+       <li><a href="ParentPage.ChildPage?whereUsed" accesskey="w">Where Used</a></li>
+       <li><a href="ParentPage.ChildPage?versions" accesskey="v">Versions</a></li>
+    
+     <li class="divider"><a href="ParentPage.ChildPage?refactor&amp;type=rename">Rename</a></li>
+   <li><a href="ParentPage.ChildPage?refactor&amp;type=move">Move</a></li>
+   <li><a href="ParentPage.ChildPage?refactor&amp;type=replace">Replace</a></li>
+   <li><a href="ParentPage.ChildPage?deletePage">Delete</a></li>
+       <li  class="divider"><a href="/files" accesskey="f">Files</a></li>
+       <li><a href="?searchForm" accesskey="s">Search</a></li>
+       <li><a href="/RecentChanges" accesskey="">Recent Changes</a></li>
+  
+  
+     <li class="divider"><a href=".FitNesse.UserGuide" accesskey="">User Guide</a></li>
+    </ul>
+ </li>
+</ul>
+  </nav>
+  
+  <article>
+   <span class="meta">Error! Cannot include parent page (&lt;ParentPage).
+</span>&gt;  </article>
+  
+    <footer>
+     </footer>
+    
+ </body>
+</html>
+]]></actual>
+                              <expected><![CDATA[show]]></expected>
+                              <evaluationMessage><![CDATA[show]]></evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction><![CDATA[[decisionTable_29_0, make, decisionTable_29, TearDown]]]></instruction>
+        <slimResult><![CDATA[OK]]></slimResult>
+                <expectation>
+          <status>right</status>
+          <instructionId>decisionTable_29_0</instructionId>
+          <col>0</col>
+          <row>0</row>
+          <type>ConstructionExpectation</type>
+                    <actual><![CDATA[OK]]></actual>
+                              <expected><![CDATA[tear down]]></expected>
+                              <evaluationMessage><![CDATA[pass(tear down)]]></evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction><![CDATA[[decisionTable_29_1, call, decisionTable_29, table, []]]]></instruction>
+        <slimResult><![CDATA[__EXCEPTION__:fitnesse.slim.SlimError: message:<<NO_METHOD_IN_CLASS table[1] fitnesse.fixtures.TearDown.>>
+	at fitnesse.slim.MethodExecutionResult$NoMethod.returnValue(MethodExecutionResult.java:29)
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:207)
+	at fitnesse.slim.Statement.callMethodAtIndex(Statement.java:104)
+	at fitnesse.slim.Statement.call(Statement.java:97)
+	at fitnesse.slim.Statement.execute(Statement.java:77)
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:44)
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:39)
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:71)
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:81)
+	at fitnesse.slim.SlimServer.processTheInstructions(SlimServer.java:73)
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:57)
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:43)
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:30)
+	at fitnesse.slim.SlimService.accept(SlimService.java:98)
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:39)
+	at fitnesse.slim.SlimService.main(SlimService.java:26)
+]]></slimResult>
+        
+      </instructionResult>
+      
+    </instructions>
+    
+  </result>
+  
+    <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>0</totalRunTimeInMillis>
+  
+</testResults>
+
