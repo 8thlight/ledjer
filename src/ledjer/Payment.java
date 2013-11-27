@@ -1,22 +1,22 @@
 package ledjer;
 
 
-public class Payment {
-    private int amount;
+public class Payment extends Transaction {
     private String payee;
 
     public Payment(int amount, String payee)
     {
-        this.amount = amount;
+        super(amount);
         this.payee = payee;
-    }
-
-    public int getAmount() {
-        return amount;
     }
 
     public String getPayee() {
         return payee;
+    }
+
+    @Override
+    public String asStatement() {
+        return "Payment to " + getPayee() + ": $" + formattedAmount(getAmount()) + Transaction.newLine();
     }
 
 

@@ -18,5 +18,11 @@ public class PaymentTest {
         assertEquals("alice", payment.getPayee());
     }
 
+    @Test
+    public void hasAStatement() {
+        Payment payment = new Payment(100, "riley");
+        assertEquals("Payment to riley: $10.00" + Transaction.newLine(), payment.asStatement());
+    }
+
 
 }

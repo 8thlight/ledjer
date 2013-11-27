@@ -1,14 +1,14 @@
 package ledjer;
 
-public class Deposit {
-
-    private int amount;
+public class Deposit extends Transaction{
 
 	public Deposit(int amount) {
-        this.amount = amount;
+        super(amount);
 	}
 
-    public int getAmount() {
-        return amount;
+    @Override
+    public String asStatement() {
+        return "Deposit: " + formattedAmount(getAmount()) + newLine();
     }
 }
+

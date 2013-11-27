@@ -3,6 +3,7 @@ package ledjer;
 public class Ledger {
 
 	private int balance;
+    private Transaction transaction;
 
 	public Ledger() {
 		balance = 0;
@@ -16,12 +17,15 @@ public class Ledger {
         balance += deposit.getAmount();
 	}
 
-	public String statement() {
-		return "Your balance is " + balance;
-	}
-
-    public void payment(Payment payment) {
+    public void pay(Transaction payment) {
         balance -= payment.getAmount();
     }
+
+	public String statement() {
+        String statement = "";
+        statement += transaction.asStatement();
+        return statement;
+	}
+
 
 }

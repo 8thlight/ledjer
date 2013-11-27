@@ -12,4 +12,10 @@ public class DepositTest {
         assertEquals(100, deposit.getAmount());
     }
 
+    @Test
+    public void hasAStatement() {
+        Deposit deposit = new Deposit(75);
+        assertEquals("Deposit: $7.50" + Transaction.newLine(), deposit.asStatement());
+    }
+
 }

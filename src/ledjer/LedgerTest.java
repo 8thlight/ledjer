@@ -20,9 +20,8 @@ public class LedgerTest {
 
     @Test
     public void canAddDepositToBalance() {
-        Deposit deposit = new Deposit(100);
-        ledger.deposit(deposit);
-        assertEquals(100, ledger.getBalance());
+        ledger.deposit(new Deposit(500));
+        assertEquals(500, ledger.getBalance());
     }
 
     @Test
@@ -33,11 +32,10 @@ public class LedgerTest {
 
     @Test
     public void itMakesAPayment() {
-        Deposit deposit = new Deposit(50);
+        Transaction deposit = new Deposit(50);
         Payment payment = new Payment(25, "bob");
         ledger.deposit(deposit);
-        ledger.payment(payment);
+        ledger.pay(payment);
         assertEquals(25, ledger.getBalance());
     }
-
 }
