@@ -13,9 +13,10 @@ public class Ledger {
 	}
 
 	public void deposit(Deposit deposit) {
+        balance += deposit.getAmount();
 	}
 
 	public String statement() {
-		return "";
+		return "Your balance is " + balance;
 	}
 }
