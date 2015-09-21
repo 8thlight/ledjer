@@ -1,5 +1,6 @@
 Ledger uses only Transaction
-Introduce printString() for statement()
+
+Introduce abstract methond asStatement() in Transaction and use in for Ledger.statement()
 
 pay() and deposit() take a Transaction as an argument. Payments and deposits are stored in the same data structure.
 
