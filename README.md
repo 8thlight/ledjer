@@ -33,6 +33,24 @@ Default locale: en_US, platform encoding: US-ASCII
 OS name: "mac os x", version: "10.9.5", arch: "x86_64", family: "mac"
 ```
 
+Gradle:
+```
+$ gradle -v
+
+------------------------------------------------------------
+Gradle 2.4
+------------------------------------------------------------
+
+Build time:   2015-05-05 08:09:24 UTC
+Build number: none
+Revision:     5c9c3bc20ca1c281ac7972643f1e2d190f2c943c
+
+Groovy:       2.3.10
+Ant:          Apache Ant(TM) version 1.9.4 compiled on April 29 2014
+JVM:          1.8.0_40 (Oracle Corporation 25.40-b25)
+OS:           Mac OS X 10.9.5 x86_64
+```
+
 The versions on your system should differ only in their _minor version_ (that's the last number, i.e., 0_40 for Java above).
 
 ## Importing ledjer into Eclipse
@@ -41,14 +59,26 @@ This is only relevant when creating new projects from within Eclipse.
 For this excercise its precise location is not critical, so simply accept Eclipse's default.
 
 To import ledjer into Eclipse:
+
+### From maven
 File > Import > Maven > Existing Maven Project
 In the input field for the _Root Directory_ navigate to the ledjer folder.
 Then proceed to select the pom.xml file in _Projects:_ box.
 Hit _Finish_ as the last step.
 
+### From Gradle
+First run `gradle eclipse` in the terminal inside the ledjer folder.
+File > Import > General > Existing Projects into Workspace
+In the input field for the _Select root directory_ navigate to the ledjer folder.
+_ledjer_ should appear selected in the _Projects_ list.
+Hit _Finish_ as the last step.
+
 ## Build and run tests using Eclipse
 To run all the tests, right-click on the top-level _ledjer_ folder and click _Run as_ and then _JUnit test_.
 That will recompile the classes and, assuming there are no compile errors, run the JUnit tests and Cucumber features.
+
+## Run Cucumber features from Gradle
+`gradle cucumber`
 
 ## Cucumber plugin for Eclipse
 This plugin is not required for the exercises.
